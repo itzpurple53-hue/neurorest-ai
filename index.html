@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroRest AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <header class="topbar">
+      <h1>NEUROREST AI</h1>
+      <p>Smart Bedroom Simulation</p>
+    </header>
+
+    <section class="hero">
+      <h2>Welcome to NeuroRest AI</h2>
+      <p>Your AI-powered smart bedroom experience.</p>
+      <button id="startBtn">Start Simulation</button>
+    </section>
+
+    <section class="bedroom-section" id="bedroom">
+      <h2>SMART BEDROOM</h2>
+      <div id="scene-container"></div>
+    </section>
+
+    <section class="dashboard">
+      <h2>AI ENVIRONMENT CONTROL</h2>
+
+      <div class="control">
+        <label>Lighting</label>
+        <input type="range" id="lightControl" min="0" max="100" value="50">
+      </div>
+
+      <div class="control">
+        <label>Sound</label>
+        <input type="range" id="soundControl" min="0" max="100" value="40">
+      </div>
+
+      <div class="control">
+        <label>Temperature</label>
+        <input type="range" id="tempControl" min="16" max="30" value="24">
+      </div>
+
+      <div class="control">
+        <label>Aromatherapy</label>
+        <button id="aromaBtn">Activate Aroma</button>
+      </div>
+
+      <button id="analyseBtn">Analyse Environment</button>
+
+      <p id="aiMessage">AI System Ready</p>
+    </section>
+
+    <section class="system-status">
+      <h2>NEUROREST AI SYSTEM STATUS</h2>
+      <p>Real-Time Simulation Overview</p>
+
+      <div class="status-grid">
+        <div>
+          <span class="status-dot"></span>
+          <h3>NEUROREST AI</h3>
+          <p>System Online</p>
+        </div>
+
+        <div>
+          <span class="status-dot"></span>
+          <h3>SMART BEDROOM</h3>
+          <p>Environment Active</p>
+        </div>
+
+        <div>
+          <span class="status-dot"></span>
+          <h3>AI ANALYSIS</h3>
+          <p>System Ready</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 NeuroRest AI</p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
