@@ -1,79 +1,157 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NeuroRest AI</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
   <div class="app">
 
     <header class="topbar">
-      <h1>NEUROREST AI</h1>
-      <p>Smart Bedroom Simulation</p>
+      <div class="brand">
+        <span class="logo">N</span>
+        <div>
+          <h2>NEUROREST AI</h2>
+          <p>SMART SLEEP ENVIRONMENT</p>
+        </div>
+      </div>
+      <span class="status">● SYSTEM ONLINE</span>
     </header>
 
-    <section class="hero">
-      <h2>Welcome to NeuroRest AI</h2>
-      <p>Your AI-powered smart bedroom experience.</p>
-      <button id="startBtn">Start Simulation</button>
+    <main class="hero">
+      <div class="hero-content">
+        <span class="tag">AI-POWERED SMART BEDROOM</span>
+        <h1>Rest Better.<br><span>Live Smarter.</span></h1>
+        <p class="description">
+          An intelligent sleep environment system
+          designed to monitor, analyse and optimise
+          your bedroom environment.
+        </p>
+        <button id="startBtn">
+          START SIMULATION <span>→</span>
+        </button>
+        <p class="note">INTERACTIVE AI DEMONSTRATION</p>
+      </div>
+
+      <div class="hero-visual">
+        <div class="circle"></div>
+        <div class="room-icon">🌙</div>
+        <div class="visual-label">
+          <span>01 / INTRODUCTION</span>
+          <strong>Smart Sleep Technology</strong>
+        </div>
+      </div>
+    </main>
+
+    <section class="bedroom-section">
+      <div class="section-heading">
+        <span>NEUROREST AI / 01</span>
+        <h2>Smart Bedroom Environment</h2>
+        <p>Interactive 3D Room Visualization</p>
+      </div>
+      <div id="roomCanvas"></div>
+      <p class="room-caption">3D SMART SLEEP ENVIRONMENT</p>
     </section>
 
-    <section class="bedroom-section" id="bedroom">
-      <h2>SMART BEDROOM</h2>
-      <div id="scene-container"></div>
+    <section class="control-section">
+      <div class="section-heading">
+        <span>NEUROREST AI / 03</span>
+        <h2>Smart Environment Control</h2>
+        <p>Personalised Bedroom Adjustment</p>
+      </div>
+
+      <div class="control-panel">
+        <div class="control-item">
+          <label>💡 LIGHTING LEVEL</label>
+          <h3 id="lightValue">45%</h3>
+          <input type="range" id="lightSlider" min="0" max="100" value="45">
+        </div>
+
+        <div class="control-item">
+          <label>🔊 SOUND LEVEL</label>
+          <h3 id="soundValue">35%</h3>
+          <input type="range" id="soundSlider" min="0" max="100" value="35">
+        </div>
+
+        <div class="control-item">
+          <label>🌡️ TEMPERATURE</label>
+          <h3 id="tempValue">24°C</h3>
+          <input type="range" id="tempSlider" min="18" max="30" value="24">
+        </div>
+
+        <div class="control-item">
+          <label>🌿 AROMATHERAPY</label>
+          <button id="aromaBtn">DIFFUSER OFF</button>
+        </div>
+
+        <div class="control-item">
+          <label>✨ SMART AUTOMATION</label>
+          <h3>AI Smart Mode</h3>
+          <p>Automatically optimise your bedroom settings.</p>
+          <button id="smartModeBtn">ACTIVATE SMART MODE</button>
+        </div>
+      </div>
     </section>
 
-    <section class="dashboard">
-      <h2>AI ENVIRONMENT CONTROL</h2>
-
-      <div class="control">
-        <label>Lighting</label>
-        <input type="range" id="lightControl" min="0" max="100" value="50">
+    <section class="monitor-section">
+      <div class="section-heading">
+        <span>NEUROREST AI / 02</span>
+        <h2>AI Monitoring Dashboard</h2>
+        <p>Real-time Environment Simulation</p>
       </div>
 
-      <div class="control">
-        <label>Sound</label>
-        <input type="range" id="soundControl" min="0" max="100" value="40">
+      <div class="monitor-grid">
+        <div class="monitor-card">
+          <span>HEART RATE</span>
+          <h3 id="heartRate">72 <small>BPM</small></h3>
+          <p>Simulated pulse reading</p>
+        </div>
+
+        <div class="monitor-card">
+          <span>LIGHTING LEVEL</span>
+          <h3 id="lightLevel">45<small>%</small></h3>
+          <p>Bedroom brightness</p>
+        </div>
+
+        <div class="monitor-card">
+          <span>SOUND LEVEL</span>
+          <h3 id="soundLevel">35<small>dB</small></h3>
+          <p>Ambient sound simulation</p>
+        </div>
+
+        <div class="monitor-card">
+          <span>RELAXATION</span>
+          <h3 id="relaxLevel">78<small>%</small></h3>
+          <p>Simulated relaxation index</p>
+        </div>
       </div>
 
-      <div class="control">
-        <label>Temperature</label>
-        <input type="range" id="tempControl" min="16" max="30" value="24">
+      <div class="analysis-panel">
+        <button id="analyseBtn">✦ ANALYSE ENVIRONMENT</button>
+        <p id="aiMessage">AI SYSTEM READY. Waiting for environmental analysis.</p>
       </div>
-
-      <div class="control">
-        <label>Aromatherapy</label>
-        <button id="aromaBtn">Activate Aroma</button>
-      </div>
-
-      <button id="analyseBtn">Analyse Environment</button>
-
-      <p id="aiMessage">AI System Ready</p>
     </section>
 
     <section class="system-status">
       <h2>NEUROREST AI SYSTEM STATUS</h2>
-      <p>Real-Time Simulation Overview</p>
+      <p class="status-subtitle">Real-Time Simulation Overview</p>
 
       <div class="status-grid">
-        <div>
+        <div class="status-item">
           <span class="status-dot"></span>
           <h3>NEUROREST AI</h3>
           <p>System Online</p>
         </div>
 
-        <div>
+        <div class="status-item">
           <span class="status-dot"></span>
           <h3>SMART BEDROOM</h3>
           <p>Environment Active</p>
         </div>
 
-        <div>
+        <div class="status-item">
           <span class="status-dot"></span>
           <h3>AI ANALYSIS</h3>
           <p>System Ready</p>
@@ -82,13 +160,12 @@
     </section>
 
     <footer>
-      <p>© 2026 NeuroRest AI</p>
+      <span>NEUROREST AI © 2026</span>
+      <span>INTELLIGENT ENVIRONMENT SYSTEM</span>
     </footer>
 
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="script.js"></script>
-
+  <script src="./script.js"></script>
 </body>
 </html>
